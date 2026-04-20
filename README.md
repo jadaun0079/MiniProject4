@@ -26,7 +26,6 @@ Clone the repository:
 git clone https://github.com/jadaun0079/MiniProject4.git
 For Frontend https://github.com/jadaun0079/MiniProject4/tree/main/Frontend
 For Backend https://github.com/jadaun0079/MiniProject4/tree/main/Backend
-Install dependencies:
 
 npm install
 Start the development server:
@@ -52,7 +51,7 @@ src/
 ├── assets/             # Static assets and styles
 └── App.jsx             # Main application component
 API Integration
-This frontend communicates with a backend API (typically running on http://localhost:4000) for data persistence and user authentication.
+This frontend communicates with a backend API  for data persistence and user authentication.
 
 Contributing
 Fork the repository
