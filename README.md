@@ -24,7 +24,8 @@ Installation
 Clone the repository:
 
 git clone https://github.com/jadaun0079/MiniProject4.git
-cd MiniProject/frontend
+For Frontend https://github.com/jadaun0079/MiniProject4/tree/main/Frontend
+For Backend https://github.com/jadaun0079/MiniProject4/tree/main/Backend
 Install dependencies:
 
 npm install
