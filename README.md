@@ -23,15 +23,15 @@ npm or yarn
 Installation
 Clone the repository:
 
-git clone https://github.com/jadaun0079/ForntEnd-MiniProject.git
-cd ForntEnd-MiniProject/frontend
+git clone https://github.com/jadaun0079/MiniProject4.git
+cd MiniProject/frontend
 Install dependencies:
 
 npm install
 Start the development server:
 
 npm run dev
-Open http://localhost:5173 in your browser.
+Open https://69defa1e87f5abeb28a961fe--nimble-klepon-4875f3.netlify.app/ in your browser.
 
 Build for Production
 npm run build
