@@ -1,0 +1,86 @@
+import { Trash2 } from 'lucide-react';
+import axios from 'axios';
+
+const ExpenseList = ({ expenses, onDeleteExpense }) => {
+  const handleDelete = async (id) => {
+    if (!window.confirm('Delete this expense?')) return;
+    try {
+      const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+      await axios.delete(`${import.meta.env.VITE_API_URL}/expenses/${id}`, {
+        headers: { Authorization: `Bearer ${userInfo.token}` },
+      });
+      onDeleteExpense(id);
+    } catch (error) {
+      console.error('Error deleting expense:', error);
+    }
+  };
+
+  const categoryColors = {
+    'Food': 'bg-orange-500/20 text-orange-400 border-orange-500/20',
+    'Transport': 'bg-blue-500/20 text-blue-400 border-blue-500/20',
+    'Education': 'bg-indigo-500/20 text-indigo-400 border-indigo-500/20',
+    'Entertainment': 'bg-pink-500/20 text-pink-400 border-pink-500/20',
+    'Shopping': 'bg-purple-500/20 text-purple-400 border-purple-500/20',
+    'Other': 'bg-slate-500/20 text-slate-300 border-slate-500/20',
+  };
+
+  if (expenses.length === 0) {
+    return (
+      <div className="flex flex-col items-center justify-center py-16 text-center animate-fade-in">
+        <div className="h-24 w-24 rounded-full bg-slate-800/50 flex items-center justify-center mb-4 border border-white/5">
+          <span className="text-4xl">💸</span>
+        </div>
+        <p className="text-slate-400 font-medium">No expenses found.</p>
+        <p className="text-sm text-slate-500 mt-1">Add your first expense to see it here.</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex flex-col gap-3 max-h-[600px] overflow-y-auto pr-2" style={{ scrollbarWidth: 'thin' }}>
+      {expenses.map((expense) => {
+        const colorClass = categoryColors[expense.category] || categoryColors['Other'];
+        return (
+          <div key={expense._id} className="group flex items-center justify-between p-4 rounded-2xl bg-slate-900/40 border border-white/5 hover:bg-slate-800/60 hover:border-white/10 transition-all duration-300">
+            <div className="flex items-center gap-4">
+              <div className="hidden sm:flex flex-col items-center justify-center h-12 w-12 rounded-xl bg-slate-950/50 border border-white/5 text-slate-300 text-xs font-bold">
+                <span>{new Date(expense.date).getDate()}</span>
+                <span className="text-[10px] uppercase text-slate-500 tracking-wider">
+                  {new Date(expense.date).toLocaleString('default', { month: 'short' })}
+                </span>
+              </div>
+              <div>
+                <h4 className="font-semibold text-white group-hover:text-blue-200 transition-colors">
+                  {expense.description}
+                </h4>
+                <div className="flex items-center gap-2 mt-1">
+                  <span className={`px-2.5 py-0.5 rounded-full text-[10px] uppercase font-bold border ${colorClass}`}>
+                    {expense.category}
+                  </span>
+                  <span className="text-xs text-slate-500 sm:hidden">
+                    {new Date(expense.date).toLocaleDateString()}
+                  </span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-4">
+              <span className="font-extrabold text-white text-lg">
+                ${expense.amount.toFixed(2)}
+              </span>
+              <button
+                onClick={() => handleDelete(expense._id)}
+                className="p-2 rounded-xl bg-slate-950/50 text-slate-500 hover:text-red-400 hover:bg-red-500/10 hover:border-red-500/20 border border-white/5 transition-all opacity-0 group-hover:opacity-100 disabled:opacity-50 focus:opacity-100"
+                title="Delete"
+              >
+                <Trash2 className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default ExpenseList;
