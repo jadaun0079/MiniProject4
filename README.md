@@ -31,7 +31,7 @@ npm install
 Start the development server:
 
 npm run dev
-Open https://69defa1e87f5abeb28a961fe--nimble-klepon-4875f3.netlify.app/ in your browser.
+Open https://ephemeral-cannoli-9810c0.netlify.app in your browser.
 
 Build for Production
 npm run build
