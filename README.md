@@ -2,7 +2,7 @@
 
 > A production-ready, full-stack financial command center built with **React 19**, **Vite**, **Express 5**, **MongoDB**, **JWT authentication**, and **Google Gemini GenAI**.
 
-Live Netlify Frontend: [https://nimble-klepon-4875f3.netlify.app/](https://nimble-klepon-4875f3.netlify.app/)
+Live Netlify Frontend: [https://datavisulizatio.netlify.app/dashboard]
 
 ---
 
@@ -165,7 +165,7 @@ npm run build
 2. In your Netlify Site Settings:
    - **Build Command**: `npm run build`
    - **Publish Directory**: `Frontend/dist`
-   - **Environment Variable**: `VITE_API_URL` set to your deployed backend URL (e.g. `https://expense-tracker-backend.onrender.com/api`).
+   - **Environment Variable**: `VITE_API_URL` set to your deployed backend URL (e.g. `https://miniproject4-vu0u.onrender.com`).
 3. Whenever code is committed to GitHub, Netlify automatically triggers the production build.
 
 ---
