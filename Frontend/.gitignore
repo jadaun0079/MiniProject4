@@ -1,6 +1,8 @@
 node_modules/
 .env
+.env.local
+.env.*.local
+!.env.example
 dist/
-build/
-package.json/
-package-lock.json/
+dist-ssr/
+*.local

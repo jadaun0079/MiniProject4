@@ -1,0 +1,21 @@
+{
+  "name": "miniproject4",
+  "version": "2.0.0",
+  "description": "FinVortex — Futuristic Financial Command Center Full-Stack Application",
+  "scripts": {
+    "dev": "npm --prefix Frontend run dev",
+    "build": "npm --prefix Frontend run build",
+    "preview": "npm --prefix Frontend run preview",
+    "start:backend": "npm --prefix Backend start",
+    "dev:backend": "npm --prefix Backend dev",
+    "test:backend": "npm --prefix Backend test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadaun0079/MiniProject4.git"
+  },
+  "keywords": ["expense-tracker", "fintech", "finance", "react", "vite", "express"],
+  "author": "jadaun0079",
+  "license": "ISC",
+  "type": "module"
+}
