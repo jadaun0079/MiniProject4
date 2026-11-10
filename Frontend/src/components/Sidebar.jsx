@@ -10,6 +10,7 @@ import {
   LogOut,
   Zap,
   X,
+  Smartphone,
 } from 'lucide-react';
 
 const Sidebar = ({ isOpen, onClose }) => {
@@ -22,11 +23,12 @@ const Sidebar = ({ isOpen, onClose }) => {
   };
 
   const navLinks = [
-    { name: 'Dashboard', path: '/dashboard', icon: LayoutDashboard },
+    { name: 'Dashboard',    path: '/dashboard',    icon: LayoutDashboard },
     { name: 'Transactions', path: '/transactions', icon: ArrowLeftRight },
-    { name: 'Analytics', path: '/analytics', icon: PieChart },
-    { name: 'Budgets', path: '/budgets', icon: Target },
-    { name: 'Settings', path: '/settings', icon: Settings },
+    { name: 'Analytics',    path: '/analytics',    icon: PieChart },
+    { name: 'Budgets',      path: '/budgets',      icon: Target },
+    { name: 'Settings',     path: '/settings',     icon: Settings },
+    { name: 'Download App', path: '/download',     icon: Smartphone },
   ];
 
   return (

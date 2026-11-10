@@ -11,6 +11,7 @@ import Analytics from './pages/Analytics';
 import Budgets from './pages/Budgets';
 import Settings from './pages/Settings';
 import NotFound from './pages/NotFound';
+import DownloadApp from './pages/DownloadApp';
 
 function App() {
   return (
@@ -65,6 +66,7 @@ function App() {
             />
 
             {/* 404 Catch-All */}
+            <Route path="/download" element={<DownloadApp />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
